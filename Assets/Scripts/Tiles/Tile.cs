@@ -22,7 +22,7 @@ public class Tile : MonoBehaviour
     {
         float randomNumber = Random.value;
 
-        if (randomNumber > curve.Evaluate(GameManager.difficulty))
+        if (randomNumber > curve.Evaluate(GameManager.staticDifficulty))
         {
             platform.SetActive(false);
             hasPlatform = false;
