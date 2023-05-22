@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int difficulty;
-    public static int staticDifficulty;
+    [SerializeField] private int _difficulty;
+    public static int _staticDifficulty;
 
-    [SerializeField] private GameObject player;
-    private static GameObject staticPlayer;
+    [SerializeField] private GameObject _player;
+    private static GameObject _staticPlayer;
 
     private void Awake()
     {
-        staticDifficulty = difficulty;
-        staticPlayer = player;
+        _staticDifficulty = _difficulty;
+        _staticPlayer = _player;
     }
 
     public static GameObject GetPlayer()
     {
-        return staticPlayer;
+        return _staticPlayer;
     }
 }

@@ -4,38 +4,38 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    private bool hasPlatform = true;
-    [SerializeField] private GameObject platform;
+    [SerializeField] bool _alwaysHasPlatform = false;
+    [SerializeField] private GameObject _platform;
 
-    private Tile tileBeneath;
+    private Tile _tileBeneath;
 
-    [SerializeField] private AnimationCurve curve;
+    [SerializeField] private AnimationCurve _curve;
 
-    private bool onFire = false;
+    private bool _onFire = false;
 
     private void Awake()
     {
-        CalculatePlatformProbability();
+        if (!_alwaysHasPlatform)
+            CalculatePlatformProbability();
     }
 
     private void CalculatePlatformProbability()
     {
         float randomNumber = Random.value;
 
-        if (randomNumber > curve.Evaluate(GameManager.staticDifficulty))
+        if (randomNumber > _curve.Evaluate(GameManager._staticDifficulty))
         {
-            platform.SetActive(false);
-            hasPlatform = false;
+            _platform.SetActive(false);
         }
     }
 
     public void SetTileBeneath(Tile tileBeneath)
     {
-        this.tileBeneath = tileBeneath;
+        this._tileBeneath = tileBeneath;
     }
 
     public void Shatter()
     {
-        onFire = true;
+        _onFire = true;
     }
 }

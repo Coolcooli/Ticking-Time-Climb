@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    private Animator _animator;
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rigidbody2D;
 
     private Vector2 _velocity;
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 

@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3552698626841886280}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6151383807897441541
 SpriteRenderer:
@@ -98,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2aa020f6cf6aa47a76b824fee7d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platform: {fileID: 3151340355057898973}
-  curve:
+  _alwaysHasPlatform: 0
+  _platform: {fileID: 3151340355057898973}
+  _curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -182,6 +183,10 @@ PrefabInstance:
     - target: {fileID: 2204055841076164100, guid: 631c101cce0da2a478b2fac1d43c8c02, type: 3}
       propertyPath: m_Name
       value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497418615063122698, guid: 631c101cce0da2a478b2fac1d43c8c02, type: 3}
+      propertyPath: m_Size.y
+      value: 0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
