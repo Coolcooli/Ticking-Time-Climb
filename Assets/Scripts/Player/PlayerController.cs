@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputAction;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -35,5 +36,15 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("Grounded", grounded);
 
         _rigidbody2D.velocity += _velocity;
+    }
+
+    public void OnMovementPressed(CallbackContext context)
+    {
+
+    }
+
+    public void OnJumpPressed(CallbackContext context)
+    {
+
     }
 }
